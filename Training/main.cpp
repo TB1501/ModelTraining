@@ -11,8 +11,8 @@ int main(){
 
     //READING THE DATA
 
-    std::string fileNameImages = "C:\\Users\\Tin\\Desktop\\archive (1)\\train-images-idx3-ubyte\\train-images-idx3-ubyte";
-    std::string fileNameLabels = "C:\\Users\\Tin\\Desktop\\archive (1)\\train-labels-idx1-ubyte\\train-labels-idx1-ubyte";
+    std::string fileNameImages = "./TrainingData/train-images-idx3-ubyte/train-images-idx3-ubyte";
+    std::string fileNameLabels = "./TrainingData/train-labels-idx1-ubyte/train-labels-idx1-ubyte";
 
     std::vector<std::vector<unsigned char>> images = readImages(fileNameImages);
     std::vector<std::vector<unsigned char>> labels = readLabels(fileNameLabels);
@@ -79,7 +79,7 @@ int main(){
     cv::Ptr<cv::ml::TrainData> trainData = cv::ml::TrainData::create(trainingData, cv::ml::ROW_SAMPLE, labelData);
 
     network->train(trainData);
-    network->save("C:\\Users\\Tin\\Desktop\\newtrainData\\trData3.xml");
+    network->save("./trData1.xml");
 
 
 	return 0;
