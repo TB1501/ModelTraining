@@ -7,12 +7,18 @@
 
 
 
-int main(){
+int main(int argc, char* argv[]) {
 
     //READING THE DATA
 
-    std::string fileNameImages = "./TrainingData/train-images-idx3-ubyte/train-images-idx3-ubyte";
-    std::string fileNameLabels = "./TrainingData/train-labels-idx1-ubyte/train-labels-idx1-ubyte";
+    if (argc < 4) {
+		std::cout << "Usage: " << argv[0] << " <path to images> <path to labels>" << std::endl;
+		return 1;
+	}
+
+    std::string fileNameImages = argv[1];
+    std::string fileNameLabels = argv[2];
+    std::string savePath = argv[3];
 
     std::vector<std::vector<unsigned char>> images = readImages(fileNameImages);
     std::vector<std::vector<unsigned char>> labels = readLabels(fileNameLabels);
@@ -79,7 +85,8 @@ int main(){
     cv::Ptr<cv::ml::TrainData> trainData = cv::ml::TrainData::create(trainingData, cv::ml::ROW_SAMPLE, labelData);
 
     network->train(trainData);
-    network->save("./trData1.xml");
+    network->save(savePath);
+    std::cout << "Model saved to: " << savePath << std::endl;
 
 
 	return 0;
