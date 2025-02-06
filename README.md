@@ -19,9 +19,10 @@ Download the appropriate .exe file for the device and run it.
 In order for OpenCV to work the project needs to be configured. In project properties configure the VC++ Directories, the Include Directories and Library Directories.
 In the Include Directories the path to the include folder in OpenCV folder needs to be specified (.\opencv\build\include). In the Library Directories the path to the
 lib files needs to be specified (.\opencv\build\x64\vc16\lib). After configuring the VC++ Directories the Linker also needs to be configured.
-In Input add the required opencv.lib files (opencv_world4100.lib and opencv_world4100d.lib).
+In Input add the required opencv.lib files. For running the release version the opencv_world4100.lib needs to be added and for the debug version the opencv_world4100d.lib.
 
-Before running the compiled .exe file, the opencv.lib files need to be added to the release or debug folders where the .exe was created.
+Before running the release or debug .exe file copy the opencv_world4100.dll to the location of the release .exe or the opencv_world4100d.dll to the location of the
+debug .exe
 
 ---
 

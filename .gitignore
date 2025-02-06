@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+/.vs/ModelTraining/FileContentIndex
+/.vs/ModelTraining/v17
+/Training/x64/Debug
+/Training/x64/Release/Training.tlog

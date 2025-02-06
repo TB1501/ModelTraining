@@ -12,7 +12,7 @@ int main(int argc, char* argv[]) {
     //READING THE DATA
 
     if (argc < 4) {
-		std::cout << "Usage: " << argv[0] << " <path to images> <path to labels>" << std::endl;
+		std::cout << "Usage: " << argv[0] << " <path to images> <path to labels> <path to save data>" << std::endl;
 		return 1;
 	}
 
@@ -50,7 +50,7 @@ int main(int argc, char* argv[]) {
     //DEFINING THE NETWORK
 
     cv::Mat_<int> layerSizes(1, 3);
-    /*std::cout << "Number of images: " << imagesData[0].total();*/
+    
     layerSizes(0, 0) = imagesData[0].total();
     layerSizes(0, 1) = 100;
     layerSizes(0, 2) = 10;
